@@ -1,0 +1,9 @@
+25-08-12.22:30:00.930 [main            ] INFO  GroupBuyActivityTest   - Starting GroupBuyActivityTest using Java 17.0.12 on ZJ669 with PID 44128 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-12.22:30:00.931 [main            ] INFO  GroupBuyActivityTest   - The following 1 profile is active: "dev"
+25-08-12.22:30:03.346 [main            ] INFO  GroupBuyActivityTest   - Started GroupBuyActivityTest in 2.931 seconds (JVM running for 4.218)
+25-08-12.22:30:03.895 [main            ] INFO  GroupBuyActivityTest   - queryGroupBuyActivityList
+25-08-12.22:30:03.912 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-12.22:30:04.588 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-12.22:30:04.657 [main            ] INFO  GroupBuyActivityTest   - GroupBuyActivity(id=1, activityId=100123, activityName=测试活动, source=s01, channel=c01, goodsId=9890001, discountId=25120207, groupType=0, takeLimitCount=1, target=1, validTime=15, status=0, startTime=Sat Dec 07 18:19:40 CST 2024, endTime=Sat Dec 07 18:19:40 CST 2024, tagId=1, tagScope=1, createTime=Sat Dec 07 18:19:40 CST 2024, updateTime=Sat Dec 07 19:47:27 CST 2024)
+25-08-12.22:30:04.682 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-12.22:30:04.703 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
