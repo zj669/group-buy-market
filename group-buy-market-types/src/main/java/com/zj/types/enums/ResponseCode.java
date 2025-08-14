@@ -12,6 +12,8 @@ public enum ResponseCode {
     SUCCESS("0000", "成功"),
     UN_ERROR("0001", "未知失败"),
     ILLEGAL_PARAMETER("0002", "非法参数"),
+
+    E0006("0006", "拼团人数已经满")
     ;
 
     private String code;
