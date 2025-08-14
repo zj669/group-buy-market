@@ -421,3 +421,4 @@ Caused by: java.lang.ClassNotFoundException: Cannot find class: cn.bugstack.infr
 	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
 	... 164 common frames omitted
 25-08-14.13:11:38.403 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m5s62ms215µs200ns).
+25-08-14.14:03:06.216 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m438ms9µs100ns).
