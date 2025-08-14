@@ -19,8 +19,7 @@ public abstract class AbstractDistinctStrategy {
             throw new AppException(ResponseCode.ILLEGAL_PARAMETER.getCode(),"优惠配置错误");
         }
         BigDecimal curPrice = calculate(skuVO, split);
-        SkuVO curSkuVo = SkuVO.builder().goodsId(skuVO.getGoodsId()).goodsName(skuVO.getGoodsName()).originalPrice(curPrice).build();
-        context.setSkuVO(curSkuVo);
+        context.setDeductionPrice(curPrice);
     };
 
     public abstract BigDecimal calculate(SkuVO skuVO, String[] split);

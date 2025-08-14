@@ -3,6 +3,7 @@ package com.zj.infrastructure.adapter.repository;
 import com.zj.domain.activity.adapter.repository.IActivityRepository;
 import com.zj.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
 import com.zj.domain.activity.model.valobj.SkuVO;
+import com.zj.domain.tag.adapter.repository.ITagRepository;
 import com.zj.infrastructure.dao.IGroupBuyActivityDao;
 import com.zj.infrastructure.dao.IGroupBuyDiscountDao;
 import com.zj.infrastructure.dao.ISCSkuActivityDao;
@@ -11,7 +12,9 @@ import com.zj.infrastructure.dao.po.GroupBuyActivity;
 import com.zj.infrastructure.dao.po.GroupBuyDiscount;
 import com.zj.infrastructure.dao.po.SCSkuActivity;
 import com.zj.infrastructure.dao.po.Sku;
+import com.zj.infrastructure.redis.IRedisService;
 import org.apache.ibatis.annotations.Mapper;
+import org.redisson.api.RBitSet;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -24,7 +27,8 @@ public class ActivityRepository implements IActivityRepository {
     private IGroupBuyDiscountDao groupBuyDiscountDao;
     @Resource
     private ISCSkuActivityDao scSkuActivityDao;
-
+    @Resource
+    private IRedisService redisService;
     @Resource
     private ISkuDao skuDao;
 
@@ -83,6 +87,11 @@ public class ActivityRepository implements IActivityRepository {
                 .build();
     }
 
+    @Override
+    public boolean isTagCrowdRange(String tagId, String userId) {
+        RBitSet bitSet = redisService.getBitSet(tagId);
+        return bitSet.get(redisService.getIndexFromUserId(userId));
+    }
 }
 
 

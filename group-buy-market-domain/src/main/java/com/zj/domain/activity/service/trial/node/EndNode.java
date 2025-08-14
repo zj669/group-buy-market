@@ -28,12 +28,12 @@ public class EndNode extends AbstractGroupBuyMarketSupport {
                 .goodsId(skuVO.getGoodsId())
                 .goodsName(skuVO.getGoodsName())
                 .originalPrice(skuVO.getOriginalPrice())
-                .deductionPrice(new BigDecimal("0.00"))
+                .deductionPrice(context.getDeductionPrice())
                 .targetCount(groupBuyActivityDiscountVO.getTarget())
                 .startTime(groupBuyActivityDiscountVO.getStartTime())
                 .endTime(groupBuyActivityDiscountVO.getEndTime())
-                .isVisible(false)
-                .isEnable(false)
+                .isVisible(context.getIsVisible())
+                .isEnable(context.getIsEnable())
                 .build();
     }
 

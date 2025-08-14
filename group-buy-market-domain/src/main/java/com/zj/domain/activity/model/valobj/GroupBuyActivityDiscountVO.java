@@ -1,11 +1,14 @@
 package com.zj.domain.activity.model.valobj;
 
+import com.zj.types.common.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
+import java.util.Objects;
 
 
 @Getter
@@ -74,6 +77,22 @@ public class GroupBuyActivityDiscountVO {
      * 人群标签规则范围
      */
     private String tagScope;
+
+    public Boolean getIsEnable() {
+        String[] split = tagScope.split(Constants.SPLIT);
+        if(split.length != 0 && split[0].equals("1")){
+            return false;
+        }
+       return true;
+    }
+
+    public Boolean getIsVisible() {
+        String[] split = this.tagScope.split(Constants.SPLIT);
+        if (split.length == 2 && Objects.equals(split[1], "2") && StringUtils.isNotBlank(split[1])) {
+            return false;
+        }
+        return true;
+    }
 
     @Getter
     @Builder
