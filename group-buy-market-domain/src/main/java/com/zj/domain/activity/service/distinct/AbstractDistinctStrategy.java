@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 
 public abstract class AbstractDistinctStrategy {
 
-    public void distinct( DynamicContext context){
+    public void distinct(DynamicContext context){
         SkuVO skuVO = context.getSkuVO();
         GroupBuyDiscount discount = context.getGroupBuyActivityDiscountVO().getGroupBuyDiscount();
         String[] split = discount.getMarketExpr().split(Constants.SPLIT);
