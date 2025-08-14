@@ -9,6 +9,8 @@ import com.zj.types.common.model.tree.handler.StrategyHandler;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Component
 public class DefaultActivityStragyFactory {
     private final RootNode rootNode;
@@ -26,6 +28,16 @@ public class DefaultActivityStragyFactory {
     public static class DynamicContext{
         private GroupBuyActivityDiscountVO groupBuyActivityDiscountVO;
         private SkuVO skuVO;
+        private BigDecimal deductionPrice;
+        /**
+         * 是否可见
+         */
+        private Boolean isVisible;
+
+        /**
+         * 是否可参与
+         */
+        private Boolean isEnable;
 
     }
 }

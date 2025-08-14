@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 @Service
 public class SwitchNode extends AbstractGroupBuyMarketSupport {
     @Resource
-    private MarketNode marketNode;
+    private TagNode tagNode;
 
     @Override
     protected TrialBalanceEntity doApply(MarketProductEntity requestParams, DynamicContext context) {
@@ -23,6 +23,6 @@ public class SwitchNode extends AbstractGroupBuyMarketSupport {
 
     @Override
     public StrategyHandler<MarketProductEntity, DynamicContext, TrialBalanceEntity> getStrategyHandler(MarketProductEntity requestParams, DynamicContext context) {
-        return marketNode;
+        return tagNode;
     }
 }

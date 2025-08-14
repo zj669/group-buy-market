@@ -29,16 +29,11 @@ import java.util.concurrent.TimeoutException;
 @Service
 public class MarketNode extends AbstractGroupBuyMarketSupport {
     @Resource
-    private ThreadPoolExecutor threadPoolExecutor;
-    @Resource
     private ErrorNode errorNode;
     @Resource
     private EndNode endNode;
     @Resource
-    private IActivityRepository activityRepository;
-    @Resource
     private Map<String, AbstractDistinctStrategy> distinctStrategyMap;
-
 
     @Override
     protected TrialBalanceEntity doApply(MarketProductEntity requestParams, DynamicContext context) {
@@ -65,23 +60,4 @@ public class MarketNode extends AbstractGroupBuyMarketSupport {
         return endNode;
     }
 
-    @Override
-    protected void multiThread(MarketProductEntity requestParams, DynamicContext context) {
-        QuerySkuDataTask querySkuDataTask = new QuerySkuDataTask(requestParams.getGoodsId(), activityRepository);
-        FutureTask<SkuVO> skuDataTask = new FutureTask<>(querySkuDataTask);
-        threadPoolExecutor.execute(skuDataTask);
-
-        QueryGroupBuyActivityDataTask queryGroupBuyActivityDataTask = new QueryGroupBuyActivityDataTask(requestParams.getGoodsId(), activityRepository);
-        FutureTask<GroupBuyActivityDiscountVO> groupBuyActivityDiscountVOFutureTask = new FutureTask<>(queryGroupBuyActivityDataTask);
-        threadPoolExecutor.execute(groupBuyActivityDiscountVOFutureTask);
-        Long timeout = 5L;
-        try {
-            context.setSkuVO(skuDataTask.get(timeout, TimeUnit.MINUTES));
-            context.setGroupBuyActivityDiscountVO(groupBuyActivityDiscountVOFutureTask.get(timeout, TimeUnit.MINUTES));
-        } catch (InterruptedException | ExecutionException | TimeoutException e) {
-            log.info("异步查询超时");
-            throw new RuntimeException(e);
-        }
-        log.info("异步加载数据完成");
-    }
 }

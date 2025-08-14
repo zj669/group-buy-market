@@ -11,4 +11,5 @@ public interface IActivityRepository {
 
     SkuVO querySkuByGoodsId(String goodsId);
 
+    boolean isTagCrowdRange(String tagId, String userId);
 }
