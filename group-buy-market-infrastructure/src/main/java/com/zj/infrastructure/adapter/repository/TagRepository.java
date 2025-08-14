@@ -5,8 +5,10 @@ import com.zj.domain.tag.model.entity.CrowdTagsJobEntity;
 import com.zj.infrastructure.dao.ICrowdTagsDao;
 import com.zj.infrastructure.dao.ICrowdTagsDetailDao;
 import com.zj.infrastructure.dao.ICrowdTagsJobDao;
+import com.zj.infrastructure.dao.po.CrowdTags;
 import com.zj.infrastructure.dao.po.CrowdTagsDetail;
-import com.zj.infrastructure.redis.RedisService;
+import com.zj.infrastructure.dao.po.CrowdTagsJob;
+import com.zj.infrastructure.redis.IRedisService;
 import org.redisson.api.RBitSet;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
@@ -22,10 +24,17 @@ public class TagRepository implements ITagRepository {
     @Resource
     private ICrowdTagsJobDao crowdTagsJobDao;
     @Resource
-    private RedisService redisService;
+    private IRedisService redisService;
     @Override
     public CrowdTagsJobEntity queryCrowdTagsJobEntity(String tagId, String batchId) {
-        return null;
+        CrowdTagsJob queryCrow = CrowdTagsJob.builder().tagId(tagId).batchId(batchId).build();
+        CrowdTagsJob crowdTagsJob = crowdTagsJobDao.queryCrowdTagsJob(queryCrow);
+        return CrowdTagsJobEntity.builder()
+                .tagType(crowdTagsJob.getTagType())
+                .tagRule(crowdTagsJob.getTagRule())
+                .statStartTime(crowdTagsJob.getStatStartTime())
+                .statEndTime(crowdTagsJob.getStatEndTime())
+                .build();
     }
 
     @Override
@@ -45,6 +54,9 @@ public class TagRepository implements ITagRepository {
 
     @Override
     public void updateCrowdTagsStatistics(String tagId, Integer size) {
-
+        CrowdTags crowdTagsReq = new CrowdTags();
+        crowdTagsReq.setTagId(tagId);
+        crowdTagsReq.setStatistics(size);
+        crowdTagsDao.updateCrowdTagsStatistics(crowdTagsReq);
     }
 }
