@@ -7,30 +7,25 @@ import java.util.concurrent.Callable;
 
 public class QueryGroupBuyActivityDataTask implements Callable<GroupBuyActivityDiscountVO> {
 
-    /**
-     * 来源
-     */
-    private final String source;
 
     /**
-     * 渠道
+     * 商品id
      */
-    private final String channel;
+    private final String goodsId;
 
     /**
      * 活动仓储
      */
     private final IActivityRepository activityRepository;
 
-    public QueryGroupBuyActivityDataTask(String source, String channel, IActivityRepository activityRepository) {
-        this.source = source;
-        this.channel = channel;
+    public QueryGroupBuyActivityDataTask(String goodsId, IActivityRepository activityRepository) {
+        this.goodsId = goodsId;
         this.activityRepository = activityRepository;
     }
 
     @Override
     public GroupBuyActivityDiscountVO call() throws Exception {
-        return activityRepository.queryGroupBuyActivityDiscountVO(source, channel);
+        return activityRepository.queryGroupBuyActivityDiscountVO(goodsId);
     }
 
 }
