@@ -5,7 +5,7 @@ import com.zj.domain.activity.model.entity.TrialBalanceEntity;
 import com.zj.domain.activity.service.IIndexGroupBuyMarketService;
 import com.zj.domain.activity.service.trial.factory.DefaultActivityStragyFactory;
 import com.zj.domain.activity.service.trial.factory.DefaultActivityStragyFactory.DynamicContext;
-import com.zj.types.common.model.tree.handler.StrategyHandler;
+import com.zj.types.design.tree.handler.StrategyHandler;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -1,4 +1,4 @@
-package com.zj.types.common.model.tree.handler;
+package com.zj.types.design.tree.handler;
 
 public interface StrategyHandler<T, D, R> {
     /**

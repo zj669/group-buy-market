@@ -5,7 +5,7 @@ import com.zj.domain.activity.model.entity.TrialBalanceEntity;
 import com.zj.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
 import com.zj.domain.activity.model.valobj.SkuVO;
 import com.zj.domain.activity.service.trial.node.RootNode;
-import com.zj.types.common.model.tree.handler.StrategyHandler;
+import com.zj.types.design.tree.handler.StrategyHandler;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 

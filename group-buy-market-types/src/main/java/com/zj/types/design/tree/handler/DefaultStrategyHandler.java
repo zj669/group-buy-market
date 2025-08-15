@@ -1,4 +1,4 @@
-package com.zj.types.common.model.tree.handler;
+package com.zj.types.design.tree.handler;
 
 public class DefaultStrategyHandler<T, D, R> implements StrategyHandler<T, D, R>{
     @Override

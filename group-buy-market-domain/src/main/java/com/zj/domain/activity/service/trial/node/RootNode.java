@@ -5,7 +5,7 @@ import com.zj.domain.activity.model.entity.MarketProductEntity;
 import com.zj.domain.activity.model.entity.TrialBalanceEntity;
 import com.zj.domain.activity.service.trial.AbstractGroupBuyMarketSupport;
 import com.zj.domain.activity.service.trial.factory.DefaultActivityStragyFactory.DynamicContext;
-import com.zj.types.common.model.tree.handler.StrategyHandler;
+import com.zj.types.design.tree.handler.StrategyHandler;
 import com.zj.types.enums.ResponseCode;
 import com.zj.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
