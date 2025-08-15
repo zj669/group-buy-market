@@ -1,8 +1,8 @@
-package com.zj.types.common.model.tree;
+package com.zj.types.design.tree;
 
 
-import com.zj.types.common.model.tree.handler.DefaultStrategyHandler;
-import com.zj.types.common.model.tree.handler.StrategyHandler;
+import com.zj.types.design.tree.handler.DefaultStrategyHandler;
+import com.zj.types.design.tree.handler.StrategyHandler;
 import lombok.Data;
 
 

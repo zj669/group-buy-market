@@ -9,7 +9,7 @@ import com.zj.domain.activity.service.trial.AbstractGroupBuyMarketSupport;
 import com.zj.domain.activity.service.trial.factory.DefaultActivityStragyFactory.DynamicContext;
 import com.zj.domain.activity.service.trial.threadTask.QueryGroupBuyActivityDataTask;
 import com.zj.domain.activity.service.trial.threadTask.QuerySkuDataTask;
-import com.zj.types.common.model.tree.handler.StrategyHandler;
+import com.zj.types.design.tree.handler.StrategyHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;

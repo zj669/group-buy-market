@@ -7,11 +7,9 @@ import com.zj.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
 import com.zj.domain.activity.model.valobj.SkuVO;
 import com.zj.domain.activity.service.trial.AbstractGroupBuyMarketSupport;
 import com.zj.domain.activity.service.trial.factory.DefaultActivityStragyFactory.DynamicContext;
-import com.zj.types.common.model.tree.handler.StrategyHandler;
+import com.zj.types.design.tree.handler.StrategyHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
 
 @Slf4j
 @Service

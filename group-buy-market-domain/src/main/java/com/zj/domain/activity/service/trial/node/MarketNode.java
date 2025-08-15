@@ -1,7 +1,6 @@
 package com.zj.domain.activity.service.trial.node;
 
 import com.alibaba.fastjson2.JSON;
-import com.zj.domain.activity.adapter.repository.IActivityRepository;
 import com.zj.domain.activity.model.entity.MarketProductEntity;
 import com.zj.domain.activity.model.entity.TrialBalanceEntity;
 import com.zj.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
@@ -10,20 +9,13 @@ import com.zj.domain.activity.model.valobj.SkuVO;
 import com.zj.domain.activity.service.distinct.AbstractDistinctStrategy;
 import com.zj.domain.activity.service.trial.AbstractGroupBuyMarketSupport;
 import com.zj.domain.activity.service.trial.factory.DefaultActivityStragyFactory.DynamicContext;
-import com.zj.domain.activity.service.trial.threadTask.QueryGroupBuyActivityDataTask;
-import com.zj.domain.activity.service.trial.threadTask.QuerySkuDataTask;
-import com.zj.types.common.model.tree.handler.StrategyHandler;
+import com.zj.types.design.tree.handler.StrategyHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import javax.annotation.Resource;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 @Slf4j
 @Service
