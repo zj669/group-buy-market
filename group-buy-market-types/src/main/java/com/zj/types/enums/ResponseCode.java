@@ -13,7 +13,9 @@ public enum ResponseCode {
     UN_ERROR("0001", "未知失败"),
     ILLEGAL_PARAMETER("0002", "非法参数"),
 
-    E0006("0006", "拼团人数已经满")
+    E0006("0006", "拼团人数已经满"),
+    E0007("0007", "活动参与非法"),
+    E0008("008","用户已达上限")
     ;
 
     private String code;

@@ -58,6 +58,10 @@ public class MarketTradeController implements IMarketTradeService {
                         .info(ResponseCode.ILLEGAL_PARAMETER.getInfo())
                         .build();
             }
+            // 1. 防止幂等，  userId, outTradeNo， 返回MarketPayOrderEntity
+            //2. 平团是否结束 teamIdo
+            //3.优惠试算  userId, goodId, source, channel           TrialBalanceEntity
+            //4. 人群是否可见 TrialBalanceEntity
             // 查询 outTradeNo 是否已经存在交易记录
             MarketPayOrderEntity marketPayOrderEntity = tradeOrderService.queryNoPayMarketPayOouOrder(userId, outTradeNo);
             if (null != marketPayOrderEntity) {
@@ -147,4 +151,5 @@ public class MarketTradeController implements IMarketTradeService {
         }
 
     }
+
 }
