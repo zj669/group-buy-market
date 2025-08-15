@@ -94,6 +94,14 @@ public class MarketTradeController implements IMarketTradeService {
                     .goodsId(goodsId)
                     .build());
 
+            if(!trialBalanceEntity.getIsVisible() || !trialBalanceEntity.getIsEnable()){
+                log.info("交易锁单拦截-营销活动不可见或未启用:{} {}", userId, trialBalanceEntity.getGoodsId());
+                return Response.<LockMarketPayOrderResponseDTO>builder()
+                        .code(ResponseCode.SUCCESS.getCode())
+                        .info(ResponseCode.SUCCESS.getInfo())
+                        .build();
+            }
+
             GroupBuyActivityDiscountVO groupBuyActivityDiscountVO = trialBalanceEntity.getGroupBuyActivityDiscountVO();
 
             // 锁单
