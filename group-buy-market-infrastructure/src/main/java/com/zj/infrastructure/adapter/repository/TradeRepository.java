@@ -185,7 +185,7 @@ public class TradeRepository implements ITradeRepository {
                 .build());
 
         groupBuyOrderListDao.updateLockOrderComplete(GroupBuyOrderList.builder()
-                .orderId(lockOrderUpdateStatusAggregate.getTradeSettlementEntity().getOrderId())
+                .orderId(lockOrderUpdateStatusAggregate.getTradeSettlementEntity().getOrderOutId())
                 .userId(lockOrderUpdateStatusAggregate.getTradeSettlementEntity().getUserId())
                 .status(TradeOrderStatusEnumVO.COMPLETE.getCode())
                 .build());
