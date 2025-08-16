@@ -1,4 +1,4 @@
-package com.zj.domain.trade;
+package com.zj.domain.trade.service;
 
 import com.zj.domain.trade.model.entity.MarketPayOrderEntity;
 import com.zj.domain.trade.model.entity.PayActivityEntity;
@@ -6,7 +6,7 @@ import com.zj.domain.trade.model.entity.PayDiscountEntity;
 import com.zj.domain.trade.model.entity.UserEntity;
 import com.zj.domain.trade.model.valobj.GroupBuyProgressVO;
 
-public interface ITradeService {
+public interface ITradeLockService {
 
     MarketPayOrderEntity queryNoPayMarketPayOouOrder(String userId, String outTradeNo);
 
