@@ -58,11 +58,7 @@ public class MarketTradeController implements IMarketTradeService {
                         .info(ResponseCode.ILLEGAL_PARAMETER.getInfo())
                         .build();
             }
-            // 1. 防止幂等，  userId, outTradeNo， 返回MarketPayOrderEntity
-            //2. 平团是否结束 teamIdo
-            //3.优惠试算  userId, goodId, source, channel           TrialBalanceEntity
-            //4. 人群是否可见 TrialBalanceEntity
-            // 查询 outTradeNo 是否已经存在交易记录
+
             MarketPayOrderEntity marketPayOrderEntity = tradeOrderService.queryNoPayMarketPayOouOrder(userId, outTradeNo);
             if (null != marketPayOrderEntity) {
                 LockMarketPayOrderResponseDTO lockMarketPayOrderResponseDTO = LockMarketPayOrderResponseDTO.builder()
@@ -70,7 +66,6 @@ public class MarketTradeController implements IMarketTradeService {
                         .deductionPrice(marketPayOrderEntity.getDeductionPrice())
                         .tradeOrderStatus(marketPayOrderEntity.getTradeOrderStatusEnumVO().getCode())
                         .build();
-
                 log.info("交易锁单记录(存在):{} marketPayOrderEntity:{}", userId, JSON.toJSONString(marketPayOrderEntity));
                 return Response.<LockMarketPayOrderResponseDTO>builder()
                         .code(ResponseCode.SUCCESS.getCode())
@@ -107,7 +102,6 @@ public class MarketTradeController implements IMarketTradeService {
             }
 
             GroupBuyActivityDiscountVO groupBuyActivityDiscountVO = trialBalanceEntity.getGroupBuyActivityDiscountVO();
-
             // 锁单
             marketPayOrderEntity = tradeOrderService.lockPayOrder(
                     UserEntity.builder().userId(userId).build(),
