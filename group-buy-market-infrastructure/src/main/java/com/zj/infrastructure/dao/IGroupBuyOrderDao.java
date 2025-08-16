@@ -20,4 +20,5 @@ public interface IGroupBuyOrderDao {
 
     GroupBuyOrder queryGroupBuyProgress(String teamId);
 
+    void updateLockOrderComplete(GroupBuyOrder build);
 }

@@ -1,4 +1,4 @@
-package com.zj.domain.trade.service;
+package com.zj.domain.trade.service.lock;
 
 import com.zj.domain.trade.adapter.repository.ITradeRepository;
 import com.zj.domain.trade.model.aggregate.GroupBuyOrderAggregate;
@@ -9,6 +9,7 @@ import com.zj.domain.trade.model.entity.TradeRuleCommandEntity;
 import com.zj.domain.trade.model.entity.TradeRuleFilterBackEntity;
 import com.zj.domain.trade.model.entity.UserEntity;
 import com.zj.domain.trade.model.valobj.GroupBuyProgressVO;
+import com.zj.domain.trade.service.ITradeLockService;
 import com.zj.domain.trade.service.fillter.factory.TradeRuleFilterFactory;
 import com.zj.domain.trade.service.fillter.factory.TradeRuleFilterFactory.DynamicContext;
 import com.zj.types.design.linke.simpleChain.AbstracSimpleChainModel;
@@ -19,7 +20,7 @@ import javax.annotation.Resource;
 
 @Service
 @Slf4j
-public class TradeLockService implements ITradeLockService{
+public class TradeLockService implements ITradeLockService {
     @Resource
     private ITradeRepository tradeRepository;
     @Resource

@@ -43,8 +43,16 @@
         where team_id = #{teamId} and lock_count > 0
     </update>
 
+    <update id="updateLockOrderComplete" parameterType="com.zj.infrastructure.dao.po.GroupBuyOrder">
+        update group_buy_order
+        set lock_count = lock_count - 1, complete_count = complete_count+1 , update_time= now()
+        where team_id = #{teamId}
+    </update>
+
     <select id="queryGroupBuyProgress" parameterType="java.lang.String" resultMap="dataMap">
-        select target_count, complete_count, lock_count from group_buy_order
+        select  team_id, activity_id, source, channel, original_price,
+                deduction_price, pay_price, target_count, complete_count, lock_count, status, create_time, update_time
+        from group_buy_order
         where team_id = #{teamId}
     </select>
 

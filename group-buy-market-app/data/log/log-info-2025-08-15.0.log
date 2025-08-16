@@ -980,7 +980,7 @@ Caused by: java.lang.ClassNotFoundException: Cannot find class: cn.bugstack.infr
 25-08-14.22:03:36.280 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
 25-08-14.22:03:36.349 [main            ] INFO  IMarketTradeServiceTest - Started IMarketTradeServiceTest in 5.935 seconds (JVM running for 7.074)
 25-08-14.22:03:36.391 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@12ed9db6] to prepare test instance [com.zj.test.domain.IMarketTradeServiceTest@64fba3e6]
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.zj.test.domain.IMarketTradeServiceTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tradeService' is expected to be of type 'com.zj.api.IMarketTradeService' but was actually of type 'com.zj.domain.trade.TradeService'
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.zj.test.domain.IMarketTradeServiceTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tradeService' is expected to be of type 'com.zj.api.IMarketTradeService' but was actually of type 'com.zj.domain.trade.service.TradeService'
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:417)
@@ -1055,7 +1055,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tradeService' is expected to be of type 'com.zj.api.IMarketTradeService' but was actually of type 'com.zj.domain.trade.TradeService'
+Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tradeService' is expected to be of type 'com.zj.api.IMarketTradeService' but was actually of type 'com.zj.domain.trade.service.TradeService'
 	at org.springframework.beans.factory.support.AbstractBeanFactory.adaptBeanInstance(AbstractBeanFactory.java:417)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:398)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
@@ -1078,7 +1078,7 @@ Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bea
 25-08-14.22:05:11.846 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
 25-08-14.22:05:11.916 [main            ] INFO  IMarketTradeServiceTest - Started IMarketTradeServiceTest in 5.422 seconds (JVM running for 6.671)
 25-08-14.22:05:11.957 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2f40e5db] to prepare test instance [com.zj.test.domain.IMarketTradeServiceTest@141234df]
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.zj.test.domain.IMarketTradeServiceTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tradeService' is expected to be of type 'com.zj.api.IMarketTradeService' but was actually of type 'com.zj.domain.trade.TradeService'
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'com.zj.test.domain.IMarketTradeServiceTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tradeService' is expected to be of type 'com.zj.api.IMarketTradeService' but was actually of type 'com.zj.domain.trade.service.TradeService'
 	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:417)
@@ -1153,7 +1153,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tradeService' is expected to be of type 'com.zj.api.IMarketTradeService' but was actually of type 'com.zj.domain.trade.TradeService'
+Caused by: org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'tradeService' is expected to be of type 'com.zj.api.IMarketTradeService' but was actually of type 'com.zj.domain.trade.service.TradeService'
 	at org.springframework.beans.factory.support.AbstractBeanFactory.adaptBeanInstance(AbstractBeanFactory.java:417)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:398)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
@@ -1191,7 +1191,7 @@ java.lang.NullPointerException: Cannot invoke "com.zj.infrastructure.dao.po.Grou
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
 	at com.zj.infrastructure.adapter.repository.TradeRepository$$EnhancerBySpringCGLIB$$2fb1aeac.queryNoPayMarketPayOouOrder(<generated>)
-	at com.zj.domain.trade.TradeService.queryNoPayMarketPayOouOrder(TradeService.java:24)
+	at com.zj.domain.trade.service.TradeService.queryNoPayMarketPayOouOrder(TradeService.java:24)
 	at com.zj.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:62)
 	at com.zj.test.domain.IMarketTradeServiceTest.test_lockMarketPayOrder(IMarketTradeServiceTest.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1292,7 +1292,7 @@ java.lang.NullPointerException: Cannot invoke "com.zj.infrastructure.dao.po.Grou
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
 	at com.zj.infrastructure.adapter.repository.TradeRepository$$EnhancerBySpringCGLIB$$7a69d13a.queryNoPayMarketPayOouOrder(<generated>)
-	at com.zj.domain.trade.TradeService.queryNoPayMarketPayOouOrder(TradeService.java:24)
+	at com.zj.domain.trade.service.TradeService.queryNoPayMarketPayOouOrder(TradeService.java:24)
 	at com.zj.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:62)
 	at com.zj.test.domain.IMarketTradeServiceTest.test_lockMarketPayOrder(IMarketTradeServiceTest.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1393,7 +1393,7 @@ java.lang.NullPointerException: Cannot invoke "com.zj.infrastructure.dao.po.Grou
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
 	at com.zj.infrastructure.adapter.repository.TradeRepository$$EnhancerBySpringCGLIB$$f48cf169.queryNoPayMarketPayOouOrder(<generated>)
-	at com.zj.domain.trade.TradeService.queryNoPayMarketPayOouOrder(TradeService.java:24)
+	at com.zj.domain.trade.service.TradeService.queryNoPayMarketPayOouOrder(TradeService.java:24)
 	at com.zj.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:62)
 	at com.zj.test.domain.IMarketTradeServiceTest.test_lockMarketPayOrder(IMarketTradeServiceTest.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1482,7 +1482,7 @@ org.springframework.dao.DataIntegrityViolationException:
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
 	at com.zj.infrastructure.adapter.repository.TradeRepository$$EnhancerBySpringCGLIB$$15a61a34.lockPayOrder(<generated>)
-	at com.zj.domain.trade.TradeService.lockPayOrder(TradeService.java:39)
+	at com.zj.domain.trade.service.TradeService.lockPayOrder(TradeService.java:39)
 	at com.zj.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:100)
 	at com.zj.test.domain.IMarketTradeServiceTest.test_lockMarketPayOrder(IMarketTradeServiceTest.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -1594,7 +1594,7 @@ org.springframework.dao.DataIntegrityViolationException:
 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
 	at com.zj.infrastructure.adapter.repository.TradeRepository$$EnhancerBySpringCGLIB$$cd1ab2a5.lockPayOrder(<generated>)
-	at com.zj.domain.trade.TradeService.lockPayOrder(TradeService.java:39)
+	at com.zj.domain.trade.service.TradeService.lockPayOrder(TradeService.java:39)
 	at com.zj.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:100)
 	at com.zj.test.domain.IMarketTradeServiceTest.test_lockMarketPayOrder(IMarketTradeServiceTest.java:34)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
