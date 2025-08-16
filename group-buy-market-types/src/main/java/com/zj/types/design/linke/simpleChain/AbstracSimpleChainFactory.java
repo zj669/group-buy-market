@@ -2,16 +2,14 @@ package com.zj.types.design.linke.simpleChain;
 
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Component
-public class AbstracSimpleChainFactory<T, D, R> {
-    // todo 还需要实现一个自定义组装的方法
-    @Resource
-    private List<AbstracSimpleChainModel<T, D, R>> chainModelList;
+public abstract class AbstracSimpleChainFactory<T, D, R> {
+    protected List<AbstracSimpleChainModel<T, D, R>> chainModelList;
 
     public AbstracSimpleChainModel<T, D, R> getChain(){
+        setChainModelList();
         if(chainModelList.isEmpty() || chainModelList.size() == 0){
             return null;
         }
@@ -20,4 +18,6 @@ public class AbstracSimpleChainFactory<T, D, R> {
         }
         return chainModelList.get(0);
     }
+
+    public abstract void setChainModelList();
 }
