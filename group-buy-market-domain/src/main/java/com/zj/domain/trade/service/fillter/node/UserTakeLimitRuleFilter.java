@@ -40,6 +40,7 @@ public class UserTakeLimitRuleFilter extends AbstracSimpleChainModel<TradeRuleCo
 
         if (null != groupBuyActivity.getTakeLimitCount() && count >= groupBuyActivity.getTakeLimitCount()) {
             log.info("用户参与次数校验，已达可参与上限 activityId:{}, 次数 {}", requestParameter.getActivityId(), count);
+
             throw new AppException(ResponseCode.E0008.getInfo());
         }
 
