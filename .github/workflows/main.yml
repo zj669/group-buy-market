@@ -54,3 +54,6 @@ jobs:
 
       - name: Run Code Review
         run: java -jar ./libs/auto-code-review-sdk-1.0.jar
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          URL: ${{ secrets.URL }}
