@@ -2,16 +2,10 @@ package com.zj.domain.trade.service.lock;
 
 import com.zj.domain.trade.adapter.repository.ITradeRepository;
 import com.zj.domain.trade.model.aggregate.GroupBuyOrderAggregate;
-import com.zj.domain.trade.model.entity.MarketPayOrderEntity;
-import com.zj.domain.trade.model.entity.PayActivityEntity;
-import com.zj.domain.trade.model.entity.PayDiscountEntity;
-import com.zj.domain.trade.model.entity.TradeRuleCommandEntity;
-import com.zj.domain.trade.model.entity.TradeRuleFilterBackEntity;
-import com.zj.domain.trade.model.entity.UserEntity;
+import com.zj.domain.trade.model.entity.*;
 import com.zj.domain.trade.model.valobj.GroupBuyProgressVO;
 import com.zj.domain.trade.service.ITradeLockService;
-import com.zj.domain.trade.service.lock.fillter.factory.TradeRuleFilterFactory;
-import com.zj.domain.trade.service.lock.fillter.factory.TradeRuleFilterFactory.DynamicContext;
+import com.zj.domain.trade.service.lock.fillter.factory.TradeLockRuleFilterFactory;
 import com.zj.types.design.linke.simpleChain.AbstracSimpleChainModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -24,7 +18,7 @@ public class TradeLockService implements ITradeLockService {
     @Resource
     private ITradeRepository tradeRepository;
     @Resource
-    private TradeRuleFilterFactory tradeRuleFilterFactory;
+    private TradeLockRuleFilterFactory tradeRuleFilterFactory;
 
 
     @Override
@@ -42,13 +36,13 @@ public class TradeLockService implements ITradeLockService {
     @Override
     public MarketPayOrderEntity lockPayOrder(UserEntity userEntity, PayActivityEntity payActivityEntity, PayDiscountEntity payDiscountEntity) {
         log.info("拼团交易-锁定营销优惠支付订单:{} activityId:{} goodsId:{}", userEntity.getUserId(), payActivityEntity.getActivityId(), payDiscountEntity.getGoodsId());
-        AbstracSimpleChainModel<TradeRuleCommandEntity, DynamicContext, TradeRuleFilterBackEntity> chain = tradeRuleFilterFactory.getChain();
+        AbstracSimpleChainModel<TradeLockRuleCommandEntity, TradeLockRuleFilterFactory.DynamicContext, TradeLockRuleFilterBackEntity> chain = tradeRuleFilterFactory.getChain();
         // 交易规则过滤
-        TradeRuleFilterBackEntity tradeRuleFilterBackEntity = chain.handle(TradeRuleCommandEntity.builder()
+        TradeLockRuleFilterBackEntity tradeRuleFilterBackEntity = chain.handle(TradeLockRuleCommandEntity.builder()
                         .activityId(payActivityEntity.getActivityId())
                         .userId(userEntity.getUserId())
                         .build(),
-                new TradeRuleFilterFactory.DynamicContext());
+                new TradeLockRuleFilterFactory.DynamicContext());
 
         // 已参与拼团量 - 用于构建数据库唯一索引使用，确保用户只能在一个活动上参与固定的次数
         Integer userTakeOrderCount = tradeRuleFilterBackEntity.getUserTakeOrderCount();

@@ -2,10 +2,10 @@ package com.zj.domain.trade.service.lock.fillter.node;
 
 import com.zj.domain.trade.adapter.repository.ITradeRepository;
 import com.zj.domain.trade.model.entity.GroupBuyActivityEntity;
-import com.zj.domain.trade.model.entity.TradeRuleCommandEntity;
-import com.zj.domain.trade.model.entity.TradeRuleFilterBackEntity;
-import com.zj.domain.trade.service.lock.fillter.factory.TradeRuleFilterFactory;
-import com.zj.domain.trade.service.lock.fillter.factory.TradeRuleFilterFactory.DynamicContext;
+
+import com.zj.domain.trade.model.entity.TradeLockRuleCommandEntity;
+import com.zj.domain.trade.model.entity.TradeLockRuleFilterBackEntity;
+import com.zj.domain.trade.service.lock.fillter.factory.TradeLockRuleFilterFactory;
 import com.zj.types.design.linke.simpleChain.AbstracSimpleChainModel;
 import com.zj.types.enums.ActivityStatusEnumVO;
 import com.zj.types.enums.ResponseCode;
@@ -20,13 +20,13 @@ import java.util.Date;
 @Slf4j
 @Service
 @Order(1)
-public class ActivityUsabilityRuleFilter extends AbstracSimpleChainModel<TradeRuleCommandEntity, DynamicContext, TradeRuleFilterBackEntity> {
+public class ActivityUsabilityRuleFilter extends AbstracSimpleChainModel<TradeLockRuleCommandEntity, TradeLockRuleFilterFactory.DynamicContext, TradeLockRuleFilterBackEntity> {
 
     @Resource
     private ITradeRepository repository;
 
     @Override
-    public TradeRuleFilterBackEntity apply(TradeRuleCommandEntity requestParameter, TradeRuleFilterFactory.DynamicContext dynamicContext){
+    public TradeLockRuleFilterBackEntity apply(TradeLockRuleCommandEntity requestParameter, TradeLockRuleFilterFactory.DynamicContext dynamicContext){
         log.info("交易规则过滤1-活动的可用性校验{} activityId:{}", requestParameter.getUserId(), requestParameter.getActivityId());
 
         // 查询拼团活动
@@ -48,8 +48,7 @@ public class ActivityUsabilityRuleFilter extends AbstracSimpleChainModel<TradeRu
         // 写入动态上下文
         dynamicContext.setGroupBuyActivity(groupBuyActivity);
 
-        // 走到下一个责任链节点
-        return TradeRuleFilterBackEntity.builder().build();
+        return TradeLockRuleFilterBackEntity.builder().build();
     }
 
 }

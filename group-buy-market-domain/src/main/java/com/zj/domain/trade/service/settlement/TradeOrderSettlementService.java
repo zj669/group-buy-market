@@ -4,7 +4,9 @@ import com.zj.domain.trade.adapter.repository.ITradeRepository;
 import com.zj.domain.trade.model.aggregate.LockOrderUpdateStatusAggregate;
 import com.zj.domain.trade.model.entity.MarketPayOrderEntity;
 import com.zj.domain.trade.model.entity.TradeSettlementEntity;
+import com.zj.domain.trade.model.entity.TradeSettlementRuleFilterBackEntity;
 import com.zj.domain.trade.service.ITradeOrderSettlementService;
+import com.zj.domain.trade.service.settlement.filter.factory.TradeSettlmentRuleFilterFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -15,15 +17,22 @@ import javax.annotation.Resource;
 public class TradeOrderSettlementService implements ITradeOrderSettlementService {
     @Resource
     private ITradeRepository tradeRepository;
+    @Resource
+    private TradeSettlmentRuleFilterFactory tradeSettlmentRuleFilterFactory;
     @Override
     public void settlement(TradeSettlementEntity tradeSettlementEntity) {
-        String userId = tradeSettlementEntity.getUserId();
-        String orderOutId = tradeSettlementEntity.getOrderOutId();
-        MarketPayOrderEntity marketPayOrderEntity = tradeRepository.queryNoPayMarketPayOouOrder(userId, orderOutId);
-        if (null == marketPayOrderEntity) {
-            log.error("交易锁单记录(不存在): 用户id {}   外部订单id {}", userId, orderOutId);
-            return;
-        }
+        log.info("拼团交易-支付订单结算:{} outTradeNo:{}", tradeSettlementEntity.getUserId(), tradeSettlementEntity.getOutTradeNo());
+        TradeSettlementRuleFilterBackEntity tradeSettlementRuleFilterBackEntity = tradeSettlmentRuleFilterFactory.getChain().handle(
+                TradeSettlementEntity.builder()
+                        .source(tradeSettlementEntity.getSource())
+                        .channel(tradeSettlementEntity.getChannel())
+                        .userId(tradeSettlementEntity.getUserId())
+                        .outTradeNo(tradeSettlementEntity.getOutTradeNo())
+                        .outTradeTime(tradeSettlementEntity.getOutTradeTime())
+                        .build(),
+                new TradeSettlmentRuleFilterFactory.DynamicContext());
+
+        MarketPayOrderEntity marketPayOrderEntity = tradeSettlementRuleFilterBackEntity.getDynamicContext().getMarketPayOrderEntity(); ;
         tradeRepository.updateLockOrderStatus(LockOrderUpdateStatusAggregate.builder()
                 .tradeSettlementEntity(tradeSettlementEntity)
                 .marketPayOrderEntity(marketPayOrderEntity).build());
