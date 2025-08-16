@@ -49,7 +49,7 @@ public class IIndexGroupBuyMarketServiceTest {
     @Test
     public void test_indexMarketTrial_no_tag() throws Exception {
         MarketProductEntity marketProductEntity = new MarketProductEntity();
-        marketProductEntity.setUserId("dacihua");
+        marketProductEntity.setUserId("dacihua1");
         marketProductEntity.setSource("s01");
         marketProductEntity.setChannel("c01");
         marketProductEntity.setGoodsId("9890001");
