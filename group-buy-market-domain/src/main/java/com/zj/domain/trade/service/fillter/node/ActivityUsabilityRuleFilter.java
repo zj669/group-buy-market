@@ -27,7 +27,7 @@ public class ActivityUsabilityRuleFilter extends AbstracSimpleChainModel<TradeRu
 
     @Override
     public TradeRuleFilterBackEntity apply(TradeRuleCommandEntity requestParameter, TradeRuleFilterFactory.DynamicContext dynamicContext){
-        log.info("交易规则过滤-活动的可用性校验{} activityId:{}", requestParameter.getUserId(), requestParameter.getActivityId());
+        log.info("交易规则过滤1-活动的可用性校验{} activityId:{}", requestParameter.getUserId(), requestParameter.getActivityId());
 
         // 查询拼团活动
         GroupBuyActivityEntity groupBuyActivity = repository.queryGroupBuyActivityEntityByActivityId(requestParameter.getActivityId());
