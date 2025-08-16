@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder
 public class TradeSettlementEntity {
     /**
-     * 订单ID
+     * 外部订单ID
      */
-    private String orderId;
+    private String orderOutId;
     /**
      * 用户ID
      */

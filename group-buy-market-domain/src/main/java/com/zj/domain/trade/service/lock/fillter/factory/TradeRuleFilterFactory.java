@@ -1,9 +1,9 @@
-package com.zj.domain.trade.service.fillter.factory;
+package com.zj.domain.trade.service.lock.fillter.factory;
 
 import com.zj.domain.trade.model.entity.GroupBuyActivityEntity;
 import com.zj.domain.trade.model.entity.TradeRuleCommandEntity;
 import com.zj.domain.trade.model.entity.TradeRuleFilterBackEntity;
-import com.zj.domain.trade.service.fillter.factory.TradeRuleFilterFactory.DynamicContext;
+import com.zj.domain.trade.service.lock.fillter.factory.TradeRuleFilterFactory.DynamicContext;
 import com.zj.types.design.linke.simpleChain.AbstracSimpleChainFactory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
