@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class IMarketTradeServiceTest {
+public class IMarketTradeLockServiceTest {
     @Resource
     private IMarketTradeService marketTradeController;
 

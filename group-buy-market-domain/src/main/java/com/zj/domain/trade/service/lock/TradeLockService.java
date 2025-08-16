@@ -1,4 +1,4 @@
-package com.zj.domain.trade;
+package com.zj.domain.trade.service;
 
 import com.zj.domain.trade.adapter.repository.ITradeRepository;
 import com.zj.domain.trade.model.aggregate.GroupBuyOrderAggregate;
@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 
 @Service
 @Slf4j
-public class TradeService implements ITradeService{
+public class TradeLockService implements ITradeLockService{
     @Resource
     private ITradeRepository tradeRepository;
     @Resource
