@@ -40,3 +40,153 @@
 25-08-16.12:30:08.080 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":100.00,"endTime":"2025-12-07 18:19:40","goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","groupBuyActivityDiscountVO":{"activityId":100123,"activityName":"测试活动","channel":"c01","endTime":"2025-12-07 18:19:40","goodsId":"9890001","groupBuyDiscount":{"discountDesc":"满减优惠100-10元","discountName":"满减优惠100-10元","discountType":0,"marketExpr":"100,10","marketPlan":"MJ"},"groupType":0,"isEnable":false,"isVisible":false,"source":"s01","startTime":"2024-12-07 18:19:40","status":1,"tagId":"RQ_KJHKL98UU78H66554GFDV","tagScope":"1,2","takeLimitCount":2,"target":3,"validTime":15},"isEnable":false,"isVisible":false,"originalPrice":100.00,"startTime":"2024-12-07 18:19:40","targetCount":3}
 25-08-16.12:30:08.132 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 25-08-16.12:30:08.418 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:19:01.099 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 58680 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:19:01.100 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:19:02.190 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:19:02.194 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:19:02.259 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 0 Redis repository interfaces.
+25-08-16.17:19:03.921 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:19:04.384 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:19:04.599 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:19:06.573 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:19:06.633 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.985 seconds (JVM running for 7.079)
+25-08-16.17:19:07.116 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:19:07.699 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:19:07.933 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:19:08.122 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:24:09.968 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 38812 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:24:09.969 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:24:10.930 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:24:10.934 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:24:11.005 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 0 Redis repository interfaces.
+25-08-16.17:24:12.538 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:24:12.971 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:24:13.164 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:24:15.117 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:24:15.191 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.671 seconds (JVM running for 6.655)
+25-08-16.17:24:15.591 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:24:16.097 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:24:16.150 [main            ] INFO  TradeRepository        - 未查询到订单
+25-08-16.17:24:16.150 [main            ] ERROR TradeOrderSettlementService - 交易锁单记录(不存在): 用户id xiaofuge   订单id 411481433880
+25-08-16.17:24:16.206 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:24:16.558 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:24:41.595 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 59212 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:24:41.596 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:24:42.642 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:24:42.646 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:24:42.703 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+25-08-16.17:24:44.235 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:24:44.786 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:24:44.994 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:24:47.074 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:24:47.135 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.965 seconds (JVM running for 7.037)
+25-08-16.17:24:47.602 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:24:48.257 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:24:48.408 [main            ] INFO  TradeRepository        - 更新锁单数量
+25-08-16.17:24:48.564 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:24:48.659 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:28:15.548 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 55908 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:28:15.549 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:28:16.486 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:28:16.489 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:28:16.549 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 0 Redis repository interfaces.
+25-08-16.17:28:18.029 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:28:18.555 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:28:18.804 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:28:20.624 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:28:20.686 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.579 seconds (JVM running for 6.533)
+25-08-16.17:28:21.118 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:28:21.660 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:28:21.791 [main            ] INFO  TradeRepository        - 更新锁单数量 teamId 44846821
+25-08-16.17:28:21.791 [main            ] INFO  TradeRepository        - 更新锁单数量 teamId null
+25-08-16.17:28:21.850 [main            ] INFO  TradeRepository        - 更新锁单数量完成
+25-08-16.17:28:22.036 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:28:22.090 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:29:15.253 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 58364 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:29:15.254 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:29:16.196 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:29:16.200 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:29:16.264 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 0 Redis repository interfaces.
+25-08-16.17:29:17.729 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:29:18.193 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:29:18.421 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:29:20.227 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:29:20.287 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.459 seconds (JVM running for 6.422)
+25-08-16.17:29:20.707 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:29:21.353 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:29:21.716 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:29:21.760 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:32:29.628 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 53624 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:32:29.629 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:32:30.569 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:32:30.573 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:32:30.636 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 0 Redis repository interfaces.
+25-08-16.17:32:32.125 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:32:32.579 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:32:32.782 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:32:34.606 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:32:34.681 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.461 seconds (JVM running for 6.431)
+25-08-16.17:32:35.111 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:32:35.811 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:32:35.879 [main            ] INFO  TradeRepository        - 未查询到订单
+25-08-16.17:32:35.879 [main            ] ERROR TradeOrderSettlementService - 交易锁单记录(不存在): 用户id liergou   订单id 585183514461
+25-08-16.17:32:36.028 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:32:36.350 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:33:11.052 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 6076 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:33:11.053 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:33:11.988 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:33:11.991 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:33:12.050 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 0 Redis repository interfaces.
+25-08-16.17:33:13.592 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:33:14.035 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:33:14.271 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:33:16.127 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:33:16.191 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.556 seconds (JVM running for 6.505)
+25-08-16.17:33:16.627 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:33:17.275 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:33:17.345 [main            ] INFO  TradeRepository        - 未查询到订单
+25-08-16.17:33:17.345 [main            ] ERROR TradeOrderSettlementService - 交易锁单记录(不存在): 用户id liergou   订单id 585183514461
+25-08-16.17:33:17.403 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:33:17.735 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:34:29.413 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 15544 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:34:29.414 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:34:30.432 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:34:30.437 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:34:30.504 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 0 Redis repository interfaces.
+25-08-16.17:34:31.961 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:34:32.407 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:34:32.616 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:34:34.710 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:34:34.781 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.774 seconds (JVM running for 6.76)
+25-08-16.17:34:35.241 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:34:36.076 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:34:36.329 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:34:36.468 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:34:59.770 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 37800 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:34:59.771 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:35:00.730 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:35:00.733 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:35:00.792 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 0 Redis repository interfaces.
+25-08-16.17:35:02.287 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:35:02.807 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:35:03.014 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:35:04.849 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:35:04.918 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.589 seconds (JVM running for 6.676)
+25-08-16.17:35:05.331 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:35:06.031 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:35:06.510 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:35:06.702 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-16.17:36:31.136 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Starting IMarketTradeLSettlmentServiceTest using Java 17.0.12 on ZJ669 with PID 43932 (started by 32183 in D:\java\group-buy-market\group-buy-market-app)
+25-08-16.17:36:31.138 [main            ] INFO  IMarketTradeLSettlmentServiceTest - The following 1 profile is active: "dev"
+25-08-16.17:36:32.108 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-16.17:36:32.113 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-16.17:36:32.190 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 0 Redis repository interfaces.
+25-08-16.17:36:33.687 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-16.17:36:34.115 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:36:34.325 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.17:36:36.220 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-16.17:36:36.283 [main            ] INFO  IMarketTradeLSettlmentServiceTest - Started IMarketTradeLSettlmentServiceTest in 5.606 seconds (JVM running for 6.741)
+25-08-16.17:36:36.727 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-16.17:36:37.448 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-16.17:36:38.014 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-16.17:36:38.136 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

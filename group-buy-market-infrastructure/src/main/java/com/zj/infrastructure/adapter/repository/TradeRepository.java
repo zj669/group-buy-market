@@ -1,25 +1,28 @@
 package com.zj.infrastructure.adapter.repository;
 
+import com.alibaba.fastjson2.JSON;
 import com.zj.domain.trade.adapter.repository.ITradeRepository;
 import com.zj.domain.trade.model.aggregate.GroupBuyOrderAggregate;
-import com.zj.domain.trade.model.entity.GroupBuyActivityEntity;
-import com.zj.domain.trade.model.entity.MarketPayOrderEntity;
-import com.zj.domain.trade.model.entity.PayActivityEntity;
-import com.zj.domain.trade.model.entity.PayDiscountEntity;
-import com.zj.domain.trade.model.entity.UserEntity;
+import com.zj.domain.trade.model.aggregate.LockOrderUpdateStatusAggregate;
+import com.zj.domain.trade.model.entity.*;
 import com.zj.domain.trade.model.valobj.GroupBuyProgressVO;
 import com.zj.domain.trade.model.valobj.TradeOrderStatusEnumVO;
 import com.zj.infrastructure.dao.IGroupBuyActivityDao;
 import com.zj.infrastructure.dao.IGroupBuyOrderDao;
 import com.zj.infrastructure.dao.IGroupBuyOrderListDao;
+import com.zj.infrastructure.dao.INotifyTaskDao;
 import com.zj.infrastructure.dao.po.GroupBuyActivity;
 import com.zj.infrastructure.dao.po.GroupBuyOrder;
 import com.zj.infrastructure.dao.po.GroupBuyOrderList;
+import com.zj.infrastructure.dao.po.NotifyTask;
 import com.zj.types.enums.ActivityStatusEnumVO;
+import com.zj.types.enums.ResponseCode;
+import com.zj.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 @Slf4j
@@ -31,6 +34,8 @@ public class TradeRepository implements ITradeRepository {
     private IGroupBuyOrderListDao groupBuyOrderListDao;
     @Resource
     private IGroupBuyActivityDao groupBuyActivityDao;
+    @Resource
+    private INotifyTaskDao notifyTaskDao;
 
     /**
      * 根据外部订单查询
@@ -49,6 +54,7 @@ public class TradeRepository implements ITradeRepository {
             return null;
         }
         return MarketPayOrderEntity.builder()
+                .teamId(groupBuyOrderList.getTeamId())
                 .orderId(groupBuyOrderList.getOrderId())
                 .deductionPrice(groupBuyOrderList.getDeductionPrice())
                 .tradeOrderStatusEnumVO(TradeOrderStatusEnumVO.valueOf(groupBuyOrderList.getStatus()))
@@ -156,6 +162,47 @@ public class TradeRepository implements ITradeRepository {
     @Override
     public Integer queryOrderCountByActivityId(Long activityId, String userId) {
         return groupBuyOrderListDao.queryOrderCountByActivityId(GroupBuyOrderList.builder().activityId(activityId).userId(userId).build());
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public void updateLockOrderStatus(LockOrderUpdateStatusAggregate lockOrderUpdateStatusAggregate) {
+        //1. order orderList
+
+        GroupBuyOrder groupBuyOrder = groupBuyOrderDao.queryGroupBuyProgress(lockOrderUpdateStatusAggregate.getMarketPayOrderEntity().getTeamId());
+
+        Integer completeCount = groupBuyOrder.getCompleteCount();
+        Integer lockCount = groupBuyOrder.getLockCount();
+        Integer targetCount = groupBuyOrder.getTargetCount();
+        if(completeCount + lockCount > targetCount){
+            throw new AppException(ResponseCode.E0010);
+        }
+
+        groupBuyOrderDao.updateLockOrderComplete(GroupBuyOrder.builder()
+                .teamId(lockOrderUpdateStatusAggregate.getMarketPayOrderEntity().getTeamId())
+                .completeCount(completeCount + 1)
+                .lockCount(lockCount - 1)
+                .build());
+
+        groupBuyOrderListDao.updateLockOrderComplete(GroupBuyOrderList.builder()
+                .orderId(lockOrderUpdateStatusAggregate.getTradeSettlementEntity().getOrderId())
+                .userId(lockOrderUpdateStatusAggregate.getTradeSettlementEntity().getUserId())
+                .status(TradeOrderStatusEnumVO.COMPLETE.getCode())
+                .build());
+
+        if(completeCount + 1 == targetCount){
+            // todo 插入一条回调任务数据
+            notifyTaskDao.insert(NotifyTask.builder()
+                            .activityId(String.valueOf(groupBuyOrder.getActivityId()))
+                    .notifyUrl("没有")
+                    .notifyCount("0")
+                    .notifyStatus("0")
+                    .parameterJson(JSON.toJSONString(lockOrderUpdateStatusAggregate))
+                    .createTime("")
+                            .updateTime( "")
+                    .teamId(groupBuyOrder.getTeamId())
+                    .build());
+        }
     }
 
 

@@ -34,6 +34,11 @@
                   #{deductionPrice}, #{status}, #{outTradeNo}, now(), now(), #{bizId}
               )
     </insert>
+    <update id="updateLockOrderComplete" parameterType="com.zj.infrastructure.dao.po.GroupBuyOrderList">
+        update group_buy_order_list
+        set status = #{status}, update_time = now()
+        where out_trade_no = #{orderId} and user_id = #{userId}
+    </update>
 
     <select id="queryGroupBuyOrderRecordByOutTradeNo" parameterType="com.zj.infrastructure.dao.po.GroupBuyOrderList" resultMap="dataMap">
         select user_id, team_id, order_id, activity_id, start_time,

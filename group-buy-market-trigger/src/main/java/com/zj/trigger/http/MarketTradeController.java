@@ -9,14 +9,14 @@ import com.zj.domain.activity.model.entity.MarketProductEntity;
 import com.zj.domain.activity.model.entity.TrialBalanceEntity;
 import com.zj.domain.activity.model.valobj.GroupBuyActivityDiscountVO;
 import com.zj.domain.activity.service.IIndexGroupBuyMarketService;
-import com.zj.domain.trade.ITradeService;
+
 import com.zj.domain.trade.model.entity.MarketPayOrderEntity;
 import com.zj.domain.trade.model.entity.PayActivityEntity;
 import com.zj.domain.trade.model.entity.PayDiscountEntity;
 import com.zj.domain.trade.model.entity.UserEntity;
 import com.zj.domain.trade.model.valobj.GroupBuyProgressVO;
+import com.zj.domain.trade.service.ITradeLockService;
 import com.zj.types.enums.ResponseCode;
-import com.zj.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -36,7 +36,7 @@ public class MarketTradeController implements IMarketTradeService {
     private IIndexGroupBuyMarketService indexGroupBuyMarketService;
 
     @Resource
-    private ITradeService tradeOrderService;
+    private ITradeLockService tradeOrderService;
 
     @Override
     public Response<LockMarketPayOrderResponseDTO> lockMarketPayOrder(LockMarketPayOrderRequestDTO lockMarketPayOrderRequestDTO) {
