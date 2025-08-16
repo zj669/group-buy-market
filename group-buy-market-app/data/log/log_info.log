@@ -5,7 +5,7 @@
 25-08-16.12:28:53.691 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 0 Redis repository interfaces.
 25-08-16.12:28:55.458 [main            ] INFO  Version                - Redisson 3.26.0
 25-08-16.12:28:55.948 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 8.137.84.161/8.137.84.161:16379
-25-08-16.12:28:56.143 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
+25-08-16.12:28:56.143 [redisson-netty-1-13] IN1FO  ConnectionsHolder      - 5 connections initialized for 8.137.84.161/8.137.84.161:16379
 25-08-16.12:28:58.105 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
 25-08-16.12:28:58.171 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 6.178 seconds (JVM running for 7.339)
 25-08-16.12:28:58.858 [main            ] INFO  RootNode               - 进来root节点，用户id为 xiaofuge， 参数为： {"channel":"c01","goodsId":"9890002","source":"s01","userId":"xiaofuge"}
